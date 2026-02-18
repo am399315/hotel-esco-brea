@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================
+       META TAGS - SEO Y CONFIGURACIÓN BÁSICA
+  ============================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hotel Esco Brea - Donde el descanso se convierte en experiencia. Ubicado en Punta Cana, República Dominicana. Habitaciones de lujo, suite caribeña y presidencial." />
+  <meta name="keywords" content="hotel punta cana, habitaciones punta cana, hotel esco brea, suite caribeña, alojamiento dominicana" />
+  <meta name="author" content="Hotel Esco Brea" />
+
+  <!-- Open Graph (para cuando compartes el link en redes sociales) -->
+  <meta property="og:title" content="Hotel Esco Brea | Punta Cana" />
+  <meta property="og:description" content="Donde el descanso se convierte en experiencia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_DO" />
+
+  <title>Hotel Esco Brea | Punta Cana, República Dominicana</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================
+       HEADER - NAVEGACIÓN PRINCIPAL
+  ============================================ -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Logo / Nombre del hotel -->
+      <a href="#inicio" class="header__logo" aria-label="Ir al inicio - Hotel Esco Brea">
+        <span class="logo__icon" aria-hidden="true">🏨</span>
+        <div class="logo__text">
+          <span class="logo__name">Esco Brea</span>
+          <span class="logo__sub">Hotel & Suites</span>
+        </div>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list" role="list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li><a href="#mision-vision" class="nav__link">Misión & Visión</a></li>
+          <li><a href="#habitaciones" class="nav__link">Habitaciones</a></li>
+          <li><a href="#disponibilidad" class="nav__link">Disponibilidad</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Controles del header (modo oscuro + menú móvil) -->
+      <div class="header__controls">
+        <!-- Botón modo oscuro/claro -->
+        <button
+          id="theme-toggle"
+          class="btn-theme"
+          aria-label="Cambiar a modo oscuro"
+          title="Cambiar tema"
+        >
+          <span class="btn-theme__icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <!-- Botón menú hamburguesa (solo móvil) -->
+        <button
+          id="menu-toggle"
+          class="btn-menu"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú móvil -->
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Menú móvil" hidden>
+      <ul class="nav-mobile__list" role="list">
+        <li><a href="#inicio" class="nav-mobile__link">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-mobile__link">Nosotros</a></li>
+        <li><a href="#mision-vision" class="nav-mobile__link">Misión & Visión</a></li>
+        <li><a href="#habitaciones" class="nav-mobile__link">Habitaciones</a></li>
+        <li><a href="#disponibilidad" class="nav-mobile__link">Disponibilidad</a></li>
+        <li><a href="#contacto" class="nav-mobile__link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ============================================
+       SECCIÓN 1: HERO / INICIO
+  ============================================ -->
+  <section id="inicio" class="hero" aria-label="Bienvenida al Hotel Esco Brea">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__tag">✦ Punta Cana, República Dominicana</p>
+      <h1 class="hero__title">Hotel Esco Brea</h1>
+      <p class="hero__slogan">Donde el descanso se convierte en experiencia</p>
+      <div class="hero__actions">
+        <a href="#habitaciones" class="btn btn--primary">Ver Habitaciones</a>
+        <a href="#disponibilidad" class="btn btn--outline">Ver Disponibilidad</a>
+      </div>
+    </div>
+    <!-- Indicador de scroll -->
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="scroll-dot"></span>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECCIÓN 2: SOBRE EL HOTEL
+  ============================================ -->
+  <section id="nosotros" class="about" aria-labelledby="about-title">
+    <div class="container about__inner">
+
+      <!-- Imagen del hotel -->
+      <div class="about__image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80"
+          alt="Vista exterior del Hotel Esco Brea en Punta Cana"
+          class="about__image"
+          loading="lazy"
+          width="700"
+          height="500"
+        />
+        <div class="about__badge" aria-hidden="true">
+          <span class="badge__number">15+</span>
+          <span class="badge__text">Años de experiencia</span>
+        </div>
+      </div>
+
+      <!-- Texto descriptivo -->
+      <div class="about__content">
+        <span class="section-tag">Sobre Nosotros</span>
+        <h2 id="about-title" class="section-title">Un paraíso en el corazón del Caribe</h2>
+        <p class="about__text">
+          El <strong>Hotel Esco Brea</strong> es un refugio de elegancia y confort ubicado en la
+          privilegiada zona de Punta Cana. Ofrecemos una experiencia única que combina la calidez
+          del servicio dominicano con las comodidades de un hotel moderno.
+        </p>
+        <p class="about__text">
+          Nuestras instalaciones cuentan con habitaciones diseñadas para cada tipo de viajero,
+          desde el huésped de negocios hasta las familias que buscan una escapada tropical
+          inolvidable.
+        </p>
+
+        <!-- Características destacadas -->
+        <ul class="about__features" role="list">
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">🌊</span>
+            <span>A 5 minutos de la playa</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">🍽️</span>
+            <span>Restaurante & Bar incluido</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">🏊</span>
+            <span>Piscina al aire libre</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-item__icon" aria-hidden="true">📶</span>
+            <span>WiFi de alta velocidad</span>
+          </li>
+        </ul>
+
+        <a href="#habitaciones" class="btn btn--primary">Explorar Habitaciones</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECCIÓN 3: MISIÓN, VISIÓN Y VALORES
+  ============================================ -->
+  <section id="mision-vision" class="mvv" aria-labelledby="mvv-title">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Nuestra Identidad</span>
+        <h2 id="mvv-title" class="section-title">Lo que nos define</h2>
+        <p class="section-subtitle">Los pilares que guían cada detalle de nuestra hospitalidad</p>
+      </div>
+
+      <div class="mvv__grid">
+
+        <!-- MISIÓN -->
+        <article class="mvv-card animate-in" aria-label="Misión del hotel">
+          <div class="mvv-card__icon" aria-hidden="true">🎯</div>
+          <h3 class="mvv-card__title">Misión</h3>
+          <p class="mvv-card__text">
+            Brindar a cada huésped una experiencia de hospitalidad auténtica y memorable,
+            combinando el calor humano de la cultura dominicana con servicios de alta calidad.
+            Nos comprometemos a superar las expectativas de quienes nos visitan, haciendo
+            de cada estadía un recuerdo que perdure en el tiempo.
+          </p>
+        </article>
+
+        <!-- VISIÓN -->
+        <article class="mvv-card animate-in" aria-label="Visión del hotel">
+          <div class="mvv-card__icon" aria-hidden="true">🌟</div>
+          <h3 class="mvv-card__title">Visión</h3>
+          <p class="mvv-card__text">
+            Ser reconocidos como el hotel de referencia en Punta Cana por nuestra excelencia
+            en el servicio, sostenibilidad y conexión con la comunidad local. Aspiramos a
+            expandir nuestra presencia en el Caribe, manteniendo siempre la esencia
+            y los valores que nos hacen únicos.
+          </p>
+        </article>
+
+        <!-- VALORES -->
+        <article class="mvv-card animate-in" aria-label="Valores del hotel">
+          <div class="mvv-card__icon" aria-hidden="true">💎</div>
+          <h3 class="mvv-card__title">Valores</h3>
+          <ul class="mvv-card__values" role="list">
+            <li class="mvv-value-item">
+              <span class="mvv-value-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Hospitalidad genuina</strong>
+                <p>Cada huésped es tratado como parte de nuestra familia.</p>
+              </div>
+            </li>
+            <li class="mvv-value-item">
+              <span class="mvv-value-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Excelencia continua</strong>
+                <p>Mejoramos constantemente para superar tus expectativas.</p>
+              </div>
+            </li>
+            <li class="mvv-value-item">
+              <span class="mvv-value-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Respeto e integridad</strong>
+                <p>Actuamos con transparencia y ética en todo momento.</p>
+              </div>
+            </li>
+            <li class="mvv-value-item">
+              <span class="mvv-value-dot" aria-hidden="true"></span>
+              <div>
+                <strong>Sostenibilidad</strong>
+                <p>Cuidamos el entorno natural del Caribe que nos acoge.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECCIÓN 4: HABITACIONES
+  ============================================ -->
+  <section id="habitaciones" class="rooms" aria-labelledby="rooms-title">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Nuestras Habitaciones</span>
+        <h2 id="rooms-title" class="section-title">Encuentra tu espacio ideal</h2>
+        <p class="section-subtitle">Cada habitación está diseñada para brindarte el máximo confort</p>
+      </div>
+
+      <!-- Grid de tarjetas de habitaciones -->
+      <!-- Los datos se cargan dinámicamente desde main.js -->
+      <div id="rooms-grid" class="rooms__grid" role="list" aria-label="Lista de habitaciones disponibles">
+        <!-- Las tarjetas se generan con JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECCIÓN 4: DISPONIBILIDAD
+  ============================================ -->
+  <section id="disponibilidad" class="availability" aria-labelledby="availability-title">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Disponibilidad</span>
+        <h2 id="availability-title" class="section-title">Estado actual de habitaciones</h2>
+        <p class="section-subtitle">Información actualizada al momento</p>
+      </div>
+
+      <!-- Resumen de disponibilidad -->
+      <div class="availability__summary" role="status" aria-live="polite">
+        <div class="summary-card summary-card--available">
+          <span class="summary-card__number" id="count-available">0</span>
+          <span class="summary-card__label">Disponibles</span>
+        </div>
+        <div class="summary-card summary-card--occupied">
+          <span class="summary-card__number" id="count-occupied">0</span>
+          <span class="summary-card__label">Ocupadas</span>
+        </div>
+        <div class="summary-card summary-card--total">
+          <span class="summary-card__number" id="count-total">0</span>
+          <span class="summary-card__label">Total</span>
+        </div>
+      </div>
+
+      <!-- Tabla de disponibilidad por tipo -->
+      <div id="availability-grid" class="availability__grid" role="list" aria-label="Disponibilidad por tipo de habitación">
+        <!-- Se genera con JavaScript -->
+      </div>
+
+      <p class="availability__note" aria-live="polite">
+        <span aria-hidden="true">ℹ️</span>
+        La disponibilidad mostrada es referencial. Para confirmar tu reserva, contáctanos directamente.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECCIÓN 5: CONTACTO
+  ============================================ -->
+  <section id="contacto" class="contact" aria-labelledby="contact-title">
+    <div class="container contact__inner">
+
+      <!-- Información de contacto -->
+      <div class="contact__info">
+        <span class="section-tag">Contáctanos</span>
+        <h2 id="contact-title" class="section-title">Estamos para servirte</h2>
+
+        <address class="contact__details">
+          <div class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p>Calle Principal Punta Cana #4<br />Punta Cana, República Dominicana</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Teléfono</strong>
+              <p><a href="tel:+18095550192" class="contact-link">+1 (809) 555-0192</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item__icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Correo Electrónico</strong>
+              <p><a href="mailto:am399315@gmail.com" class="contact-link">am399315@gmail.com</a></p>
+            </div>
+          </div>
+        </address>
+
+        <!-- Botones de acción -->
+        <div class="contact__actions">
+          <a
+            href="https://wa.me/18095550192?text=Hola,%20me%20interesa%20hacer%20una%20reserva%20en%20el%20Hotel%20Esco%20Brea"
+            class="btn btn--whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp"
+          >
+            <span aria-hidden="true">💬</span> WhatsApp
+          </a>
+          <a href="mailto:am399315@gmail.com" class="btn btn--primary">
+            <span aria-hidden="true">✉️</span> Enviar Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Mapa de Google Maps -->
+      <div class="contact__map">
+        <h3 class="map-title">¿Cómo llegar?</h3>
+        <div class="map-wrapper">
+          <iframe
+            title="Ubicación del Hotel Esco Brea en Punta Cana"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-68.4100%2C18.5500%2C-68.3600%2C18.5900&layer=mapnik&marker=18.5680%2C-68.3730"
+            width="100%"
+            height="350"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            aria-label="Mapa de ubicación del hotel"
+          ></iframe>
+        </div>
+        <a
+          href="https://www.openstreetmap.org/?mlat=18.568&mlon=-68.373#map=14/18.568/-68.373"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-link"
+        >
+          Ver mapa más grande →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <span class="logo__icon" aria-hidden="true">🏨</span>
+        <div>
+          <span class="logo__name">Esco Brea</span>
+          <span class="logo__sub">Hotel & Suites</span>
+        </div>
+      </div>
+
+      <p class="footer__slogan">Donde el descanso se convierte en experiencia</p>
+
+      <nav aria-label="Navegación del pie de página">
+        <ul class="footer__nav" role="list">
+          <li><a href="#inicio" class="footer__link">Inicio</a></li>
+          <li><a href="#nosotros" class="footer__link">Nosotros</a></li>
+          <li><a href="#mision-vision" class="footer__link">Misión & Visión</a></li>
+          <li><a href="#habitaciones" class="footer__link">Habitaciones</a></li>
+          <li><a href="#contacto" class="footer__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer__copy">
+        &copy; <span id="year"></span> Hotel Esco Brea · Punta Cana, República Dominicana
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Script principal (al final del body para mejor performance) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
