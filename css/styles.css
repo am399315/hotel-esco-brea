@@ -1314,3 +1314,149 @@ ul {
     padding: var(--space-md);
   }
 }
+
+
+/* ================================================
+   SECCIÓN AMENIDADES
+================================================ */
+.amenidades {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-surface-2);
+}
+
+/* Cada amenidad es una fila con imagen y texto */
+.amenidad-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Última amenidad sin borde inferior */
+.amenidad-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Versión invertida: texto a la izquierda, imagen a la derecha */
+.amenidad-item--reverse {
+  direction: rtl;
+}
+
+.amenidad-item--reverse .amenidad-item__content {
+  direction: ltr;
+}
+
+.amenidad-item--reverse .amenidad-item__image-wrap {
+  direction: ltr;
+}
+
+/* Imagen de la amenidad */
+.amenidad-item__image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.amenidad-item__image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.amenidad-item__image-wrap:hover .amenidad-item__image {
+  transform: scale(1.04);
+}
+
+/* Badge con emoji encima de la imagen */
+.amenidad-item__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255,255,255,0.95);
+  border-radius: var(--radius-sm);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Contenido de texto */
+.amenidad-item__content {
+  padding: var(--space-sm) 0;
+}
+
+.amenidad-item__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+}
+
+.amenidad-item__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+/* Lista de características */
+.amenidad-item__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.amenidad-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.amenidad-feature span {
+  color: var(--color-available);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Responsive tablet */
+@media (max-width: 900px) {
+  .amenidad-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .amenidad-item--reverse {
+    direction: ltr;
+  }
+
+  .amenidad-item__image {
+    height: 260px;
+  }
+}
+
+/* Responsive móvil */
+@media (max-width: 600px) {
+  .amenidad-item__image {
+    height: 220px;
+  }
+
+  .amenidad-item__title {
+    font-size: 1.3rem;
+  }
+}
