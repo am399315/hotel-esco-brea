@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================
+       META TAGS
+  ============================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reserva tu habitación en Hotel Esco Brea - Punta Cana, República Dominicana." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏨</text></svg>" />
+
+  <title>Reservaciones | Hotel Esco Brea</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Estilos: base del hotel + estilos de reservaciones -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/reservaciones.css" />
+</head>
+
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+
+      <a href="index.html" class="header__logo" aria-label="Volver al inicio - Hotel Esco Brea">
+        <span class="logo__icon" aria-hidden="true">🏨</span>
+        <div class="logo__text">
+          <span class="logo__name">Esco Brea</span>
+          <span class="logo__sub">Hotel & Suites</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list" role="list">
+          <li><a href="index.html#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="index.html#habitaciones" class="nav__link">Habitaciones</a></li>
+          <li><a href="index.html#amenidades" class="nav__link">Amenidades</a></li>
+          <li><a href="index.html#disponibilidad" class="nav__link">Disponibilidad</a></li>
+          <li><a href="index.html#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__controls">
+        <button id="theme-toggle" class="btn-theme" aria-label="Cambiar tema" title="Cambiar tema">
+          <span class="btn-theme__icon" aria-hidden="true">🌙</span>
+        </button>
+        <button id="menu-toggle" class="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+          <span class="btn-menu__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Menú móvil" hidden>
+      <ul class="nav-mobile__list" role="list">
+        <li><a href="index.html#inicio" class="nav-mobile__link">Inicio</a></li>
+        <li><a href="index.html#habitaciones" class="nav-mobile__link">Habitaciones</a></li>
+        <li><a href="index.html#amenidades" class="nav-mobile__link">Amenidades</a></li>
+        <li><a href="index.html#disponibilidad" class="nav-mobile__link">Disponibilidad</a></li>
+        <li><a href="index.html#contacto" class="nav-mobile__link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ============================================
+       HERO DE RESERVACIONES
+  ============================================ -->
+  <section class="res-hero" aria-label="Reservaciones">
+    <div class="res-hero__bg" aria-hidden="true"></div>
+    <div class="container res-hero__content">
+      <p class="hero__tag">✦ Reserva tu estadía</p>
+      <h1 class="res-hero__title">Haz tu Reservación</h1>
+      <p class="res-hero__sub">Completa el formulario y asegura tu habitación ideal</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       INDICADOR DE PASOS
+  ============================================ -->
+  <div class="pasos-wrapper" aria-label="Progreso de la reservación">
+    <div class="container">
+      <div class="pasos" role="list">
+
+        <div class="paso paso--activo" id="paso-indicator-1" role="listitem">
+          <div class="paso__numero" aria-hidden="true">1</div>
+          <span class="paso__texto">Tu información</span>
+        </div>
+
+        <div class="paso__linea" aria-hidden="true"></div>
+
+        <div class="paso" id="paso-indicator-2" role="listitem">
+          <div class="paso__numero" aria-hidden="true">2</div>
+          <span class="paso__texto">Habitación & Fechas</span>
+        </div>
+
+        <div class="paso__linea" aria-hidden="true"></div>
+
+        <div class="paso" id="paso-indicator-3" role="listitem">
+          <div class="paso__numero" aria-hidden="true">3</div>
+          <span class="paso__texto">Pago</span>
+        </div>
+
+        <div class="paso__linea" aria-hidden="true"></div>
+
+        <div class="paso" id="paso-indicator-4" role="listitem">
+          <div class="paso__numero" aria-hidden="true">4</div>
+          <span class="paso__texto">Confirmación</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       CONTENIDO PRINCIPAL
+  ============================================ -->
+  <main class="res-main" id="main-content">
+    <div class="container res-layout">
+
+      <!-- ======= FORMULARIOS (lado izquierdo) ======= -->
+      <div class="res-formularios">
+
+        <!-- PASO 1: Información personal -->
+        <div id="paso-1" class="res-paso" aria-labelledby="paso1-titulo">
+          <h2 id="paso1-titulo" class="res-paso__titulo">
+            <span aria-hidden="true">👤</span> Tu Información Personal
+          </h2>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="text"
+                id="nombre"
+                class="form-input"
+                placeholder="Ej: Juan"
+                autocomplete="given-name"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-nombre" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="apellido" class="form-label">Apellido <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="text"
+                id="apellido"
+                class="form-input"
+                placeholder="Ej: Pérez"
+                autocomplete="family-name"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-apellido" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="correo" class="form-label">Correo Electrónico <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="email"
+                id="correo"
+                class="form-input"
+                placeholder="ejemplo@correo.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-correo" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono" class="form-label">Teléfono <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="tel"
+                id="telefono"
+                class="form-input"
+                placeholder="+1 (809) 000-0000"
+                autocomplete="tel"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-telefono" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pais" class="form-label">País de Origen <span class="form-required" aria-label="requerido">*</span></label>
+              <select id="pais" class="form-input form-select" required aria-required="true">
+                <option value="">Selecciona tu país</option>
+                <option value="DO">República Dominicana</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="CO">Colombia</option>
+                <option value="VE">Venezuela</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="ES">España</option>
+                <option value="CA">Canadá</option>
+                <option value="other">Otro</option>
+              </select>
+              <span class="form-error" id="error-pais" role="alert" aria-live="polite"></span>
+            </div>
+
+          </div>
+
+          <div class="res-paso__actions">
+            <button type="button" class="btn btn--primary btn--full" id="btn-paso1">
+              Continuar → Habitación & Fechas
+            </button>
+          </div>
+        </div>
+
+
+        <!-- PASO 2: Habitación y fechas -->
+        <div id="paso-2" class="res-paso res-paso--oculto" aria-labelledby="paso2-titulo">
+          <h2 id="paso2-titulo" class="res-paso__titulo">
+            <span aria-hidden="true">🛏️</span> Selecciona tu Habitación y Fechas
+          </h2>
+
+          <div class="form-grid">
+
+            <div class="form-group form-group--full">
+              <label for="habitacion" class="form-label">Tipo de Habitación <span class="form-required" aria-label="requerido">*</span></label>
+              <select id="habitacion" class="form-input form-select" required aria-required="true">
+                <option value="">Selecciona una habitación</option>
+                <option value="simple" data-precio="85">Simple Confort — $85/noche</option>
+                <option value="doble" data-precio="130">Doble Premium — $130/noche</option>
+                <option value="suite-caribe" data-precio="220">Suite Caribeña — $220/noche</option>
+                <option value="suite-presidencial" data-precio="380">Suite Presidencial — $380/noche</option>
+              </select>
+              <span class="form-error" id="error-habitacion" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="fecha-entrada" class="form-label">Fecha de Entrada <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="date"
+                id="fecha-entrada"
+                class="form-input"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-fecha-entrada" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="fecha-salida" class="form-label">Fecha de Salida <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="date"
+                id="fecha-salida"
+                class="form-input"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-fecha-salida" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="adultos" class="form-label">Adultos <span class="form-required" aria-label="requerido">*</span></label>
+              <select id="adultos" class="form-input form-select" required aria-required="true">
+                <option value="1">1 adulto</option>
+                <option value="2" selected>2 adultos</option>
+                <option value="3">3 adultos</option>
+                <option value="4">4 adultos</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ninos" class="form-label">Niños</label>
+              <select id="ninos" class="form-input form-select">
+                <option value="0" selected>Sin niños</option>
+                <option value="1">1 niño</option>
+                <option value="2">2 niños</option>
+                <option value="3">3 niños</option>
+              </select>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="peticiones" class="form-label">Peticiones Especiales</label>
+              <textarea
+                id="peticiones"
+                class="form-input form-textarea"
+                placeholder="Ej: cama extra, vista al mar, habitación en planta baja..."
+                rows="3"
+                aria-describedby="peticiones-hint"
+              ></textarea>
+              <span id="peticiones-hint" class="form-hint">Opcional. Haremos lo posible por atender tu solicitud.</span>
+            </div>
+
+          </div>
+
+          <div class="res-paso__actions res-paso__actions--doble">
+            <button type="button" class="btn btn--outline-dark" id="btn-volver-1">
+              ← Volver
+            </button>
+            <button type="button" class="btn btn--primary" id="btn-paso2">
+              Continuar → Pago
+            </button>
+          </div>
+        </div>
+
+
+        <!-- PASO 3: Pago -->
+        <div id="paso-3" class="res-paso res-paso--oculto" aria-labelledby="paso3-titulo">
+          <h2 id="paso3-titulo" class="res-paso__titulo">
+            <span aria-hidden="true">💳</span> Información de Pago
+          </h2>
+
+          <!-- Selector de método de pago -->
+          <div class="metodos-pago" role="group" aria-label="Método de pago">
+            <button type="button" class="metodo-btn metodo-btn--activo" data-metodo="credito" aria-pressed="true">
+              <span aria-hidden="true">💳</span> Tarjeta de Crédito
+            </button>
+            <button type="button" class="metodo-btn" data-metodo="debito" aria-pressed="false">
+              <span aria-hidden="true">🏦</span> Tarjeta de Débito
+            </button>
+          </div>
+
+          <!-- Tarjeta visual animada -->
+          <div class="tarjeta-visual" aria-hidden="true">
+            <div class="tarjeta-visual__frente" id="tarjeta-frente">
+              <div class="tarjeta-visual__top">
+                <span class="tarjeta-visual__tipo" id="tarjeta-tipo">CRÉDITO</span>
+                <span class="tarjeta-visual__chip">▣</span>
+              </div>
+              <div class="tarjeta-visual__numero" id="tarjeta-numero">•••• •••• •••• ••••</div>
+              <div class="tarjeta-visual__bottom">
+                <div>
+                  <div class="tarjeta-visual__label">Titular</div>
+                  <div class="tarjeta-visual__valor" id="tarjeta-nombre">NOMBRE APELLIDO</div>
+                </div>
+                <div>
+                  <div class="tarjeta-visual__label">Vence</div>
+                  <div class="tarjeta-visual__valor" id="tarjeta-vence">MM/AA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de pago -->
+          <div class="form-grid">
+
+            <div class="form-group form-group--full">
+              <label for="titular" class="form-label">Nombre del Titular <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="text"
+                id="titular"
+                class="form-input"
+                placeholder="Igual que aparece en la tarjeta"
+                autocomplete="cc-name"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-titular" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="numero-tarjeta" class="form-label">Número de Tarjeta <span class="form-required" aria-label="requerido">*</span></label>
+              <div class="input-icon-wrap">
+                <input
+                  type="text"
+                  id="numero-tarjeta"
+                  class="form-input"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                  autocomplete="cc-number"
+                  inputmode="numeric"
+                  required
+                  aria-required="true"
+                />
+                <span class="input-icon" id="card-brand-icon" aria-hidden="true">💳</span>
+              </div>
+              <span class="form-error" id="error-numero-tarjeta" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vencimiento" class="form-label">Fecha de Vencimiento <span class="form-required" aria-label="requerido">*</span></label>
+              <input
+                type="text"
+                id="vencimiento"
+                class="form-input"
+                placeholder="MM/AA"
+                maxlength="5"
+                autocomplete="cc-exp"
+                inputmode="numeric"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-vencimiento" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cvv" class="form-label">
+                CVV <span class="form-required" aria-label="requerido">*</span>
+                <button type="button" class="cvv-help" aria-label="¿Qué es el CVV?" title="Los 3 dígitos al dorso de tu tarjeta">?</button>
+              </label>
+              <input
+                type="text"
+                id="cvv"
+                class="form-input"
+                placeholder="123"
+                maxlength="4"
+                autocomplete="cc-csc"
+                inputmode="numeric"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="error-cvv" role="alert" aria-live="polite"></span>
+            </div>
+
+          </div>
+
+          <!-- Nota de seguridad -->
+          <div class="pago-seguro" aria-label="Pago seguro">
+            <span aria-hidden="true">🔒</span>
+            <p>Tu información está protegida. Este es un sistema de demostración académica. No se realizan cobros reales.</p>
+          </div>
+
+          <div class="res-paso__actions res-paso__actions--doble">
+            <button type="button" class="btn btn--outline-dark" id="btn-volver-2">
+              ← Volver
+            </button>
+            <button type="button" class="btn btn--primary" id="btn-pagar">
+              🔒 Confirmar Reservación
+            </button>
+          </div>
+        </div>
+
+
+        <!-- PASO 4: Confirmación -->
+        <div id="paso-4" class="res-paso res-paso--oculto" aria-labelledby="paso4-titulo">
+          <div class="confirmacion" role="status" aria-live="polite">
+            <div class="confirmacion__icono" aria-hidden="true">✅</div>
+            <h2 id="paso4-titulo" class="confirmacion__titulo">¡Reservación Confirmada!</h2>
+            <p class="confirmacion__sub">Gracias por elegir Hotel Esco Brea</p>
+
+            <div class="confirmacion__numero">
+              <span class="confirmacion__numero-label">Número de Reservación</span>
+              <span class="confirmacion__numero-valor" id="numero-reservacion">#ESB-000000</span>
+            </div>
+
+            <div class="confirmacion__detalle" id="confirmacion-detalle">
+              <!-- Se llena con JavaScript -->
+            </div>
+
+            <div class="confirmacion__mensaje">
+              <span aria-hidden="true">📧</span>
+              <p>Hemos enviado los detalles de tu reservación a tu correo electrónico. Nuestro equipo se pondrá en contacto contigo para confirmar la disponibilidad.</p>
+            </div>
+
+            <div class="confirmacion__actions">
+              <a href="index.html" class="btn btn--primary">Volver al Inicio</a>
+              <button type="button" class="btn btn--outline-dark" onclick="window.print()">
+                🖨️ Imprimir Confirmación
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ======= RESUMEN (lado derecho) ======= -->
+      <aside class="res-resumen" aria-label="Resumen de tu reservación">
+        <div class="res-resumen__inner">
+          <h3 class="res-resumen__titulo">Resumen de Reservación</h3>
+
+          <!-- Imagen de la habitación seleccionada -->
+          <div class="resumen-habitacion" id="resumen-habitacion-img">
+            <img
+              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80"
+              alt="Habitación seleccionada"
+              class="resumen-habitacion__img"
+              id="resumen-img"
+            />
+            <div class="resumen-habitacion__overlay">
+              <span id="resumen-tipo-hab">Selecciona una habitación</span>
+            </div>
+          </div>
+
+          <!-- Detalles del resumen -->
+          <div class="resumen-detalles">
+
+            <div class="resumen-fila" id="resumen-huésped-wrap">
+              <span class="resumen-fila__label">👤 Huésped</span>
+              <span class="resumen-fila__valor" id="resumen-huesped">—</span>
+            </div>
+
+            <div class="resumen-fila" id="resumen-fechas-wrap">
+              <span class="resumen-fila__label">📅 Entrada</span>
+              <span class="resumen-fila__valor" id="resumen-entrada">—</span>
+            </div>
+
+            <div class="resumen-fila">
+              <span class="resumen-fila__label">📅 Salida</span>
+              <span class="resumen-fila__valor" id="resumen-salida">—</span>
+            </div>
+
+            <div class="resumen-fila">
+              <span class="resumen-fila__label">🌙 Noches</span>
+              <span class="resumen-fila__valor" id="resumen-noches">—</span>
+            </div>
+
+            <div class="resumen-fila">
+              <span class="resumen-fila__label">👥 Personas</span>
+              <span class="resumen-fila__valor" id="resumen-personas">—</span>
+            </div>
+
+          </div>
+
+          <!-- Total de precio -->
+          <div class="resumen-total">
+            <div class="resumen-total__fila">
+              <span>Precio por noche</span>
+              <span id="resumen-precio-noche">$0</span>
+            </div>
+            <div class="resumen-total__fila">
+              <span>Noches</span>
+              <span id="resumen-noches-total">x0</span>
+            </div>
+            <div class="resumen-total__fila">
+              <span>Impuestos (18%)</span>
+              <span id="resumen-impuestos">$0</span>
+            </div>
+            <div class="resumen-total__fila resumen-total__fila--total">
+              <span>Total a pagar</span>
+              <span id="resumen-total">$0</span>
+            </div>
+          </div>
+
+          <!-- Nota de cancelación -->
+          <div class="resumen-nota">
+            <span aria-hidden="true">ℹ️</span>
+            <p>Cancelación gratuita hasta 48 horas antes del check-in.</p>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__icon" aria-hidden="true">🏨</span>
+        <div>
+          <span class="logo__name">Esco Brea</span>
+          <span class="logo__sub">Hotel & Suites</span>
+        </div>
+      </div>
+      <p class="footer__slogan">Donde el descanso se convierte en experiencia</p>
+      <p class="footer__copy">
+        &copy; <span id="year"></span> Hotel Esco Brea · Punta Cana, República Dominicana
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/reservaciones.js"></script>
+
+</body>
+</html>

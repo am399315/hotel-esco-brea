@@ -1,0 +1,864 @@
+/* ================================================
+   HOTEL ESCO BREA — reservaciones.css
+   Estilos exclusivos para la página de reservaciones
+================================================ */
+
+
+/* ================================================
+   1. HERO DE RESERVACIONES
+================================================ */
+.res-hero {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.res-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(11, 28, 47, 0.80) 0%,
+      rgba(11, 28, 47, 0.65) 100%
+    ),
+    url('https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=1400&q=80')
+    center/cover no-repeat;
+}
+
+.res-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffffff;
+}
+
+.res-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.res-hero__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+}
+
+
+/* ================================================
+   2. INDICADOR DE PASOS
+================================================ */
+.pasos-wrapper {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 70px;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.pasos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Cada paso */
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0.4;
+  transition: opacity var(--transition);
+}
+
+.paso--activo {
+  opacity: 1;
+}
+
+.paso--completado {
+  opacity: 1;
+}
+
+.paso__numero {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  transition: all var(--transition);
+}
+
+.paso--activo .paso__numero {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.paso--completado .paso__numero {
+  background-color: var(--color-available);
+  border-color: var(--color-available);
+  color: #ffffff;
+}
+
+.paso__texto {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.paso--activo .paso__texto {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.paso--completado .paso__texto {
+  color: var(--color-available);
+}
+
+/* Línea entre pasos */
+.paso__linea {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-border);
+  max-width: 80px;
+  margin-bottom: 1.2rem;
+  transition: background-color var(--transition);
+}
+
+.paso__linea--completada {
+  background-color: var(--color-available);
+}
+
+
+/* ================================================
+   3. LAYOUT PRINCIPAL (2 columnas)
+================================================ */
+.res-main {
+  padding: var(--space-xl) 0 var(--space-2xl);
+  background-color: var(--color-bg);
+  min-height: 70vh;
+}
+
+.res-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+
+/* ================================================
+   4. PASOS DEL FORMULARIO
+================================================ */
+.res-formularios {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Cada paso del formulario */
+.res-paso {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.res-paso--oculto {
+  display: none;
+}
+
+.res-paso__titulo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* Grid del formulario */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Campo que ocupa las 2 columnas */
+.form-group--full {
+  grid-column: 1 / -1;
+}
+
+/* Etiqueta */
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Campo requerido (asterisco rojo) */
+.form-required {
+  color: var(--color-occupied);
+  font-weight: 700;
+}
+
+/* Input, select, textarea */
+.form-input {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 58, 92, 0.12);
+}
+
+/* Estado de error en el input */
+.form-input--error {
+  border-color: var(--color-occupied);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+/* Estado válido */
+.form-input--valido {
+  border-color: var(--color-available);
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b6560' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Mensaje de error */
+.form-error {
+  font-size: 0.78rem;
+  color: var(--color-occupied);
+  font-weight: 500;
+  min-height: 1rem;
+}
+
+/* Texto de ayuda */
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Botones de acción del paso */
+.res-paso__actions {
+  margin-top: var(--space-md);
+}
+
+.res-paso__actions--doble {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn--outline-dark:hover {
+  background-color: var(--color-surface-2);
+  border-color: var(--color-text-muted);
+}
+
+
+/* ================================================
+   5. MÉTODOS DE PAGO
+================================================ */
+.metodos-pago {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.metodo-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.metodo-btn--activo {
+  border-color: var(--color-primary);
+  background-color: rgba(27, 58, 92, 0.06);
+  color: var(--color-primary);
+}
+
+.metodo-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+
+/* ================================================
+   6. TARJETA VISUAL ANIMADA
+================================================ */
+.tarjeta-visual {
+  perspective: 1000px;
+  margin-bottom: var(--space-md);
+  height: 180px;
+}
+
+.tarjeta-visual__frente {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d6a9f 60%, var(--color-accent) 100%);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos en la tarjeta */
+.tarjeta-visual__frente::before,
+.tarjeta-visual__frente::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.tarjeta-visual__frente::before {
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  top: -80px;
+  right: -60px;
+}
+
+.tarjeta-visual__frente::after {
+  width: 150px;
+  height: 150px;
+  background: #ffffff;
+  bottom: -60px;
+  left: -40px;
+}
+
+.tarjeta-visual__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tarjeta-visual__tipo {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.tarjeta-visual__chip {
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+.tarjeta-visual__numero {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tarjeta-visual__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.tarjeta-visual__label {
+  font-size: 0.62rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+
+.tarjeta-visual__valor {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Input con ícono a la derecha */
+.input-icon-wrap {
+  position: relative;
+}
+
+.input-icon-wrap .form-input {
+  padding-right: 3rem;
+}
+
+.input-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* Botón de ayuda CVV */
+.cvv-help {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-muted);
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  font-weight: 700;
+}
+
+.cvv-help:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Nota de pago seguro */
+.pago-seguro {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: var(--space-sm);
+  background-color: rgba(45, 122, 79, 0.07);
+  border: 1px solid rgba(45, 122, 79, 0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.pago-seguro span {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+
+/* ================================================
+   7. PANTALLA DE CONFIRMACIÓN
+================================================ */
+.confirmacion {
+  text-align: center;
+  padding: var(--space-md) 0;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.confirmacion__icono {
+  font-size: 4rem;
+  margin-bottom: var(--space-sm);
+  animation: bounceIn 0.6s ease both;
+}
+
+.confirmacion__titulo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-available);
+  margin-bottom: 0.4rem;
+}
+
+.confirmacion__sub {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.confirmacion__numero {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-surface-2);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.confirmacion__numero-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.confirmacion__numero-valor {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+.confirmacion__detalle {
+  background-color: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.confirmacion__detalle-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.confirmacion__detalle-fila:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.confirmacion__mensaje {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background-color: rgba(27, 58, 92, 0.06);
+  border: 1px solid rgba(27, 58, 92, 0.15);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: left;
+  margin-bottom: var(--space-md);
+}
+
+.confirmacion__mensaje span {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.confirmacion__actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ================================================
+   8. PANEL RESUMEN (lado derecho)
+================================================ */
+.res-resumen {
+  position: sticky;
+  top: 140px;
+}
+
+.res-resumen__inner {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.res-resumen__titulo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* Imagen de la habitación en el resumen */
+.resumen-habitacion {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.resumen-habitacion__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.resumen-habitacion:hover .resumen-habitacion__img {
+  transform: scale(1.05);
+}
+
+.resumen-habitacion__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #ffffff;
+  padding: 0.8rem 1rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Filas de detalles */
+.resumen-detalles {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.88rem;
+}
+
+.resumen-fila:last-child {
+  border-bottom: none;
+}
+
+.resumen-fila__label {
+  color: var(--color-text-muted);
+}
+
+.resumen-fila__valor {
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: right;
+  max-width: 55%;
+}
+
+/* Tabla de precios */
+.resumen-total {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resumen-total__fila {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding: 0.3rem 0;
+}
+
+.resumen-total__fila--total {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  padding-top: 0.6rem;
+  margin-top: 0.4rem;
+  border-top: 2px solid var(--color-border);
+}
+
+/* Nota del resumen */
+.resumen-nota {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ================================================
+   9. ANIMACIONES EXTRA
+================================================ */
+@keyframes bounceIn {
+  0%   { transform: scale(0.3); opacity: 0; }
+  50%  { transform: scale(1.1); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Spinner de carga para el botón de pagar */
+.btn--loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* ================================================
+   10. RESPONSIVE
+================================================ */
+@media (max-width: 900px) {
+  .res-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* El resumen va arriba en móvil */
+  .res-resumen {
+    position: static;
+    order: -1;
+  }
+
+  .res-hero {
+    height: 200px;
+  }
+
+  .pasos-wrapper {
+    top: 60px;
+  }
+
+  .paso__texto {
+    display: none;
+  }
+
+  .paso__linea {
+    max-width: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .res-formularios {
+    padding: var(--space-md);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group--full {
+    grid-column: 1;
+  }
+
+  .res-paso__actions--doble {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metodos-pago {
+    flex-direction: column;
+  }
+
+  .tarjeta-visual {
+    height: 150px;
+  }
+
+  .tarjeta-visual__frente {
+    height: 150px;
+    padding: 1rem;
+  }
+
+  .tarjeta-visual__numero {
+    font-size: 1rem;
+  }
+
+  .confirmacion__actions {
+    flex-direction: column;
+  }
+
+  .confirmacion__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

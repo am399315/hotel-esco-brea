@@ -135,8 +135,9 @@ function renderizarHabitaciones() {
             habitaciones
           </div>
         </div>
-        <a href="#contacto" class="btn btn--reserve" style="margin-top: 1rem;">
-          Reservar (próximamente)
+        <!-- MODIFICADO: Ahora el botón lleva a la página de reservaciones -->
+        <a href="reservaciones.html" class="btn btn--reserve" style="margin-top: 1rem;">
+          🛎️ Reservar Ahora
         </a>
       </div>
     `;
