@@ -1508,3 +1508,44 @@ ul {
     height: 180px;
   }
 }
+
+
+/* ================================================
+   AMENIDADES — Tarjeta ancha (Night Club y Playa)
+================================================ */
+
+/* Grid de 1 columna para tarjetas anchas */
+.amenidades-cards--1col {
+  grid-template-columns: 1fr;
+}
+
+/* Tarjeta ancha ocupa todo el ancho */
+.amenidad-card--wide {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: stretch;
+}
+
+.amenidad-card--wide .amenidad-card__image-wrap {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+/* Imagen más alta para tarjetas anchas */
+.amenidad-card__image--tall {
+  height: 280px !important;
+}
+
+/* Responsive tablet */
+@media (max-width: 900px) {
+  .amenidad-card--wide {
+    grid-template-columns: 1fr;
+  }
+
+  .amenidad-card--wide .amenidad-card__image-wrap {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .amenidad-card__image--tall {
+    height: 220px !important;
+  }
+}
